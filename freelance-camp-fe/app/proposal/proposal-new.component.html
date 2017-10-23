@@ -1,5 +1,6 @@
 <div class="card container form-container">
-	<div class="row">
+	<div class='row'>
+
 		<div class="col-md-6">
 			<h1>Create a Proposal</h1>
 
@@ -17,7 +18,8 @@
 										[(ngModel)]="proposal.customer"
 						>
 						<div [hidden]="customer.valid || customer.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							Customer name is required
 						</div>
 					</div>
@@ -33,7 +35,8 @@
 										[(ngModel)]="proposal.portfolio_url"
 						>
 						<div [hidden]="portfolio_url.valid || portfolio_url.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							A Portfolio URL is required
 						</div>
 					</div>
@@ -50,7 +53,8 @@
 										[(ngModel)]="proposal.tools"
 						>
 						<div [hidden]="tools.valid || tools.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							A list of tools is required
 						</div>
 					</div>
@@ -66,7 +70,8 @@
 										[(ngModel)]="proposal.estimated_hours"
 						>
 						<div [hidden]="estimated_hours.valid || estimated_hours.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							You need to enter your estimated hours for the project
 						</div>
 					</div>
@@ -84,8 +89,10 @@
 											[(ngModel)]="proposal.hourly_rate"
 							>
 						</div>
+							
 						<div [hidden]="hourly_rate.valid || hourly_rate.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							You need to enter your hourly rate for the project
 						</div>
 					</div>
@@ -101,7 +108,8 @@
 										[(ngModel)]="proposal.weeks_to_complete"
 						>
 						<div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine"
-									class="alert alert-danger">
+									class='alert alert-danger'
+						>
 							You need to enter the weeks you estimate to complete the project
 						</div>
 					</div>
@@ -118,12 +126,20 @@
 					</div>
 
 					<button type="submit"
-									class="btn btn-outline-primary btn-lg"
-									[disabled]="!proposalForm.form.valid"
-									[hidden]="submitted"
+						class='btn btn-outline-primary btn-lg'
+						[disabled]="!proposalForm.form.valid"
+						[hidden]="submitted"
 					>
 						Generate Proposal
 					</button>
+
+					<div
+						[hidden]="!submitted"
+						class="alert alert-success"
+						role="alert"
+					>
+						Your proposal has been generated <a class="alert-link" routerLink="/proposals">View all proposals</a>
+					</div>
 
 				</form>
 			</div>
@@ -152,7 +168,6 @@
 				<p>I am excited to working with you and build out this project.</p>
 			</div>
 		</div>
-
-
-
+		
+	</div>
 </div>
